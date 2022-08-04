@@ -3,6 +3,8 @@ package rogon.javacompleto.trowable.exceptions.runtimeexceptions;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
+import javax.management.modelmbean.XMLParseException;
+
 public class MultiplasRuntimeExceptionTest {
 
 	public static void main(String[] args) {
@@ -23,13 +25,17 @@ public class MultiplasRuntimeExceptionTest {
 		//Nossa classe pede dois tratamentos
 		try {
 			talvezLanceException();
-		} catch (SQLException e) {
+		//Não pode conter classes na mesma linha de herança IOException com FileNotFoundException
+		//} catch (SQLException |FileNotFoundException e) {
+			
+		//
+		} catch (Exception e) {
+			//não pode
+			//e = new SQLException();
 			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		} 
 	}
 	
-	private static void talvezLanceException() throws SQLException, FileNotFoundException{}
+	private static void talvezLanceException() throws SQLException, FileNotFoundException, XMLParseException{}
 
 }
