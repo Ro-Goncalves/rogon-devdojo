@@ -7,12 +7,13 @@ public class WildcardTestDois {
 		List<Cachorro> cachorros = List.of(new Cachorro(), new Cachorro());
 		List<Gato> gatos = List.of(new Gato(), new Gato());
 		
+		//Isso não pode
 		printConsulta(cachorros);
 		
 	}
 	
 	//Type erasure, erro. Java não sabe que cachorro é animal
-	//Devemos passar exatamente esse tipo de lista. Isso é Wildcard
+	//Devemos passar exatamente esse tipo de lista. 
 	private static void printConsulta(List<Animal> animals) {		
 		for(Animal animal : animals) {			
 			animal.consulta();			
